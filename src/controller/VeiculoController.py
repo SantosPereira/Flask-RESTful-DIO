@@ -3,7 +3,7 @@ from flask import request
 from flask_restful import Resource
 
 
-class Carro(Resource):
+class VeiculoController(Resource):
     def __init__(self) -> None:
         super().__init__()
 

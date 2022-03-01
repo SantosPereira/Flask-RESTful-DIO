@@ -3,7 +3,7 @@
 ## Entidades
 
 - Loja
-- Carro
+- Veículo
 - Venda
 - Usuário
 - Financeiro

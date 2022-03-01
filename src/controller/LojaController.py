@@ -3,7 +3,7 @@ from flask import request
 from flask_restful import Resource
 
 
-class Loja(Resource):
+class LojaController(Resource):
     def __init__(self) -> None:
         super().__init__()
 

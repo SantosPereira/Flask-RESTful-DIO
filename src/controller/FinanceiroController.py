@@ -3,7 +3,7 @@ from flask import request
 from flask_restful import Resource
 
 
-class Financeiro(Resource):
+class FinanceiroController(Resource):
     def __init__(self) -> None:
         super().__init__()
 
