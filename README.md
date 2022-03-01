@@ -7,6 +7,8 @@ Python com Flask e REST
 API"*,
 o conceito desse projeto é ser um sistema de um loja de carros que serve as APIs utilizadas em seus sites, apps e administração interna.
 
+Saiba mais sobre o projeto aqui: [docs](/docs/Projeto.md)
+
 ## Tecnologias
 
 - Python
