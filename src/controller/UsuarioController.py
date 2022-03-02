@@ -10,12 +10,12 @@ class UsuarioController(Resource):
 
     @auth.login_required
     def get(self):
-        usuarios = Usuario.query.all()
+        usuarios = [{'id':i.id, 'login':i.login} for i in Usuario.query.all()]
         return usuarios
 
     def post(self):
         dados = json.loads(request.data)
-        if 'login' and 'senha' in dados:
+        if 'login' in dados and 'senha' in dados:
             if not Usuario.query.filter_by(login=dados['login']).first():
                 usuario = Usuario(login=dados['login'], senha=dados['senha'])
                 usuario.salvar()
@@ -24,8 +24,21 @@ class UsuarioController(Resource):
                 return {'error':'Usuário já consta na base de dados'}
         return {'error':'Login ou senha não informados'}
 
+    @auth.login_required
     def put(self):
-        return ''
+        dados = json.loads(request.data)
+        usuario = Usuario.query.filter_by(login=dados['login']).first()
+        if usuario:
+            usuario.senha = dados['senha']
+            usuario.salvar()
+            return {'success':'Senha alterada com sucesso!'}
+        return {'error':'Usuário não encontrado'}
 
+    @auth.login_required
     def delete(self):
-        return ''
+        dados = json.loads(request.data)
+        usuario = Usuario.query.filter_by(login=dados['login']).first()
+        if usuario:
+            usuario.apagar()
+            return {'success':'Usuário removido do sistema'}
+        return {'error':'Usuário não encontrado'}

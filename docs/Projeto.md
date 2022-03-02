@@ -7,6 +7,8 @@
 - Venda
 - Usuário
 - Financeiro
+- Vendedor
+- Cliente
 
 ### Clientes da API
 
