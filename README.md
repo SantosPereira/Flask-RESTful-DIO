@@ -4,8 +4,8 @@
 
 Projeto utilizando o que aprendi no curso *"Desenvolvimento avançado
 Python com Flask e REST
-API"*,
-o conceito desse projeto é ser um sistema de um loja de carros que serve as APIs utilizadas em seus sites, apps e administração interna.
+API"*.
+O conceito desse projeto é ser o sistema de uma concessionária de carros, que serve as APIs utilizadas em seu sites e app comercial, e administração interna.
 
 Saiba mais sobre o projeto aqui: [docs](/docs/Projeto.md)
 
