@@ -1,6 +1,12 @@
 # API RESTful com Flask
 
-![Badge](https://img.shields.io/badge/Desenvolvimento-ativo-brightgreen)
+<!-- Opções [Ativo,Em Pausa,Encerrado] -->
+![Status de Desenvolvimento](https://img.shields.io/badge/Desenvolvimento-Ativo-success)
+![Linha de código no projeto](https://img.shields.io/tokei/lines/github/santospereira/Flask-RESTful-DIO?label=Linhas%20de%20c%C3%B3digo&style=flat)
+![Quantidade de linguagens usadas](https://img.shields.io/github/languages/count/santospereira/Flask-RESTful-DIO?label=Linguagens&color=f27830)
+![Data do último commit](https://img.shields.io/github/last-commit/santospereira/Flask-RESTful-DIO?label=%C3%9Altimo%20commit)
+
+<!-- ![Licença](https://img.shields.io/github/license/santospereira/Flask-RESTful-DIO) -->
 
 Projeto utilizando o que aprendi no curso *"Desenvolvimento avançado
 Python com Flask e REST
@@ -8,6 +14,13 @@ API"*.
 O conceito desse projeto é ser o sistema de uma concessionária de carros, que serve as APIs utilizadas em seu sites e app comercial, e administração interna.
 
 Saiba mais sobre o projeto aqui: [docs](/docs/Projeto.md)
+
+## Indíce
+
+- [Indíce](#indíce)
+- [Tecnologias](#tecnologias)
+- [Instalação](#instalação)
+- [Autor](#autor)
 
 ## Tecnologias
 
@@ -49,3 +62,6 @@ set-executionpolicy remotesigned
 ## Autor
 
 E-mail: [pedrohenriquelemam@gmail.com](mailto:pedrohenriquelemam@gmail.com)
+
+
+[Voltar ao topo](#nomedoprojeto)
