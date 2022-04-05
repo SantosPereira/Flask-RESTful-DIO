@@ -1,8 +1,8 @@
 import json
 from flask import request
 from flask_restful import Resource
-from util.Auth import auth
-from models.Usuario import Usuario
+from src.util.Auth import auth
+from src.models.Usuario import Usuario
 
 
 class UsuarioController(Resource):

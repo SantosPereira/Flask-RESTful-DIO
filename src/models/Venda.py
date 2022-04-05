@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
-from util.Cursor import Base, db_session
+from src.util.Cursor import Base, db_session
 from Cliente import Cliente
 from Veiculo import Veiculo
 from Vendedor import Vendedor

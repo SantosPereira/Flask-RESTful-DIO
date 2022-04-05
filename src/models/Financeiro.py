@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from util.Cursor import Base, db_session
+from src.util.Cursor import Base, db_session
 
 class Financeiro(Base):
     __tablename__ = 'financeiro'

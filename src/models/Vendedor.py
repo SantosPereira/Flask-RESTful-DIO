@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
-from util.Cursor import Base, db_session
-from Loja import Loja
-from Usuario import Usuario
+from src.util.Cursor import Base, db_session
+from src.models.Loja import Loja
+from src.models.Usuario import Usuario
 
 class Vendedor(Base):
     __tablename__ = 'vendedor'

@@ -1,16 +1,17 @@
 from flask import Flask
 from flask_restful import Api
-from controller.VeiculoController import VeiculoController
-from controller.FinanceiroController import FinanceiroController
-from controller.LojaController import LojaController
-from controller.UsuarioController import UsuarioController
-from controller.VendaController import VendaController
-from controller.VendedorController import VendedorController
-from controller.ClienteController import ClienteController
+from src.controller.VeiculoController import VeiculoController
+from src.controller.FinanceiroController import FinanceiroController
+from src.controller.LojaController import LojaController
+from src.controller.UsuarioController import UsuarioController
+from src.controller.VendaController import VendaController
+from src.controller.VendedorController import VendedorController
+from src.controller.ClienteController import ClienteController
 
 app = Flask(__name__)
 api = Api(app)
 
+# api.add_resource(ApiController, '/api/')
 api.add_resource(VeiculoController, '/api/veiculo/')
 api.add_resource(FinanceiroController, '/api/financeiro/')
 api.add_resource(LojaController, '/api/loja/')

@@ -1,15 +1,13 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from models.Usuario import Usuario
-from util.Cursor import Base, db_session
+from src.util.Cursor import Base, db_session
 
-class Cliente(Base):
-    __tablename__ = 'cliente'
+class Loja(Base):
+    __tablename__ = 'loja'
     id = Column(Integer, primary_key=True)
-    nome = Column(String(100), nullable=False)
-    cpf = Column(Integer, unique=True, nullable=False)
-    endereco = Column(String(80))
-    clubeBeneficios = Column(Boolean)
+    nome = Column(String(30), unique=True)
+    endereco = Column(String(120))
+    capacidadeVeiculos = Column(Integer)
 
     def salvar(self) -> None:
         db_session.add(self)
@@ -22,4 +20,4 @@ class Cliente(Base):
 
 
     def __repr__(self) -> str:
-        return f'<Cliente {self.id}:{self.nome}>'
+        return f'<Loja {self.id}:{self.endereco}>'
