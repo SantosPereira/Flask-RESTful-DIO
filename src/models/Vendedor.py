@@ -1,18 +1,20 @@
+from dataclasses import dataclass
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from src.util.Cursor import Base, db_session
 from src.models.Loja import Loja
 from src.models.Usuario import Usuario
 
+@dataclass
 class Vendedor(Base):
     __tablename__ = 'vendedor'
-    id = Column(Integer, primary_key=True)
-    nome = Column(String(100), nullable=False)
-    cpf = Column(Integer, unique=True, nullable=False)
-    endereco = Column(String(80))
-    loja_id = Column(Integer, ForeignKey('loja.id'))
+    id: int = Column(Integer, primary_key=True)
+    nome: str = Column(String(100), nullable=False)
+    cpf: int = Column(Integer, unique=True, nullable=False)
+    endereco: str = Column(String(80))
+    loja_id: int = Column(Integer, ForeignKey('loja.id'))
     loja = relationship('Loja')
-    usuario_id = Column(Integer, ForeignKey('usuario.id'))
+    usuario_id: int = Column(Integer, ForeignKey('usuario.id'))
     usuario = relationship('Usuario')
 
     def salvar(self) -> None:
