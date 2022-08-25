@@ -8,7 +8,7 @@ class Usuario(Base):
     __tablename__ = 'usuario'
     id: int = Column(Integer, primary_key=True)
     login: str = Column(String(20), unique=True)
-    senha: str = Column(String(20), nullable=False)
+    senha = Column(String(20), nullable=False)
 
     def salvar(self) -> None:
         db_session.add(self)
