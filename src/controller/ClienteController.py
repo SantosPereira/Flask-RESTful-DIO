@@ -1,5 +1,5 @@
 import json
-from flask import request
+from flask import request, jsonify
 from flask_restful import Resource
 from src.util.Auth import auth
 from src.models.Cliente import Cliente
@@ -11,16 +11,8 @@ class ClienteController(Resource):
 
     @auth.login_required
     def get(self):
-        clientes = []
-        for cliente in Cliente.query.all():
-            clientes.append({
-                'id': cliente.id,
-                'nome': cliente.nome,
-                'cpf': cliente.cpf,
-                'endereco': cliente.endereco,
-                'clubeBeneficios': cliente.clubeBeneficios
-            })
-        return clientes
+        clientes = Cliente.query.all()
+        return jsonify(clientes)
 
     @auth.login_required
     def post(self):
@@ -35,7 +27,7 @@ class ClienteController(Resource):
                     clubeBeneficios=dados['clubeBeneficios']
                 )
                 cliente.salvar()
-                return {'success': 'Cliente criado com sucesso!'}
+                return jsonify({'success': 'Cliente criado com sucesso!', 'objeto': cliente})
             except:
                 return {'error': 'Aconteceu um erro ao salvar o registro'}
         return {'error': 'Estão faltando campos no JSON'}
@@ -55,7 +47,7 @@ class ClienteController(Resource):
         if 'clubeBeneficios' in dados:
             cliente.clubeBeneficios = dados['clubeBeneficios']
         cliente.salvar()
-        return {'success': 'Registro alterado com sucesso'}
+        return jsonify({'success': 'Registro alterado com sucesso', 'objeto': cliente})
 
     @auth.login_required
     def delete(self):

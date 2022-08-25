@@ -1,7 +1,7 @@
 import json
-from flask import request
+from flask import request, jsonify
 from flask_restful import Resource
-from ..models.Usuario import Usuario
+from src.models.Usuario import Usuario
 from src.util.Auth import auth
 from src.models.Veiculo import Veiculo
 
@@ -10,20 +10,8 @@ class VeiculoController(Resource):
         super().__init__()
 
     def get(self):
-        veiculos = [
-            {
-                'id':veiculo.id,
-                'modelo':veiculo.modelo,
-                'versao':veiculo.versao,
-                'marca':veiculo.marca,
-                'combustivel':veiculo.combustivel,
-                'potencia':veiculo.potencia,
-                'peso':veiculo.peso,
-                'computadorBordo':veiculo.computadorBordo, 
-                'arCondicionado':veiculo.arCondicionado,
-                'preco':veiculo.preco
-            } for veiculo in Veiculo.query.all()]
-        return veiculos
+        veiculos = Veiculo.query.all()
+        return jsonify(veiculos)
 
     @auth.login_required
     def post(self):
@@ -41,7 +29,7 @@ class VeiculoController(Resource):
             preco=dados['preco'],
         )
         veiculo.salvar()
-        return veiculo
+        return jsonify(veiculo)
 
     @auth.login_required
     def put(self):
@@ -63,7 +51,7 @@ class VeiculoController(Resource):
         veiculo.preco=dados['preco']
         
         veiculo.salvar()
-        return veiculo
+        return jsonify(veiculo)
 
     @auth.login_required
     def delete(self):
