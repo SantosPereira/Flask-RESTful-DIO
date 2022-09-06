@@ -17,10 +17,13 @@ Saiba mais sobre o projeto aqui: [docs](/docs/Projeto.md)
 
 ## Indíce
 
-- [Indíce](#indíce)
-- [Tecnologias](#tecnologias)
-- [Instalação](#instalação)
-- [Autor](#autor)
+- [API RESTful com Flask](#api-restful-com-flask)
+  - [Indíce](#indíce)
+  - [Tecnologias](#tecnologias)
+  - [Instalação](#instalação)
+  - [Executar](#executar)
+  - [Testes](#testes)
+  - [Autor](#autor)
 
 ## Tecnologias
 
@@ -28,6 +31,7 @@ Saiba mais sobre o projeto aqui: [docs](/docs/Projeto.md)
 - Flask
   - RESTful
   - HTTPauth
+- Unittest
 - SQLAlchemy
 - SQLite
 - MVC (Padrão de Projeto)
@@ -39,18 +43,7 @@ Para a instalação do projeto use a ferramenta de versionamento de projeto [*Gi
 Após ter o projeto em sua máquina, abra um terminal no diretório do projeto e execute os comandos abaixo:
 
 ~~~bash
-# Criação do ambiente virtual
-$ python -m venv env
-
-# Ativação do ambiente:
-# Windows
-$ .\/env/Scripts/Activate.ps1
-
-# Linux/Mac
-$ source ./env/Scripts/activate
-
-# Instalação das dependências do projeto
-$ pip install -r requirements.txt
+source ./install.sh
 ~~~
 
 Se encontrar erro ao executar a ativação no windows, pode ser necessário habilitar a execução de scripts no PowerShell, para isso utilize o comando:
@@ -59,9 +52,23 @@ Se encontrar erro ao executar a ativação no windows, pode ser necessário habi
 set-executionpolicy remotesigned
 ~~~
 
+## Executar
+
+
+~~~bash
+python app.py
+~~~
+
+## Testes
+
+Para executar os teste é necessário ter a app rodando, em seguida usar o comando a seguir
+
+~~~bash
+python -m unittest
+~~~
+
 ## Autor
 
 E-mail: [pedrohenriquelemam@gmail.com](mailto:pedrohenriquelemam@gmail.com)
-
 
 [Voltar ao topo](#nomedoprojeto)
