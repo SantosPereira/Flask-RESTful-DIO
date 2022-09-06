@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, make_response
 from flask_restful import Resource
 from src.util.Auth import auth
 from src.service.UsuarioService import UsuarioService
@@ -9,15 +9,19 @@ class UsuarioController(Resource):
 
     @auth.login_required
     def get(self):
-        return UsuarioService.listar_usuario(self)
+        resposta, status = UsuarioService.listar_usuario(self)
+        return make_response(resposta, status)
 
     def post(self):
-        return UsuarioService.salvar_usuario(self, request.data)
+        resposta, status = UsuarioService.salvar_usuario(self, request.data)
+        return make_response(resposta, status)
 
     @auth.login_required
     def put(self):
-        return UsuarioService.modificar_usuario(self, request.data)
+        resposta, status = UsuarioService.modificar_usuario(self, request.data)
+        return make_response(resposta, status)
 
     @auth.login_required
     def delete(self):
-        return UsuarioService.apagar_usuario(self, request.data)
+        resposta, status = UsuarioService.apagar_usuario(self, request.data)
+        return make_response(resposta, status)
