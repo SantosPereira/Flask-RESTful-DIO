@@ -2,11 +2,14 @@ from dataclasses import dataclass
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from src.util.Cursor import Base, db_session
+from src.models.Loja import Loja
 
 @dataclass
 class Financeiro(Base):
     __tablename__ = 'financeiro'
     id: int = Column(Integer, primary_key=True)
+    loja_id: int = Column(Integer)
+    loja = relationship('Loja')
     
 
     def salvar(self) -> None:

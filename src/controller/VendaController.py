@@ -1,47 +1,30 @@
-import json
-from flask import request, jsonify
+from flask import request, make_response
 from flask_restful import Resource
-from src.models.Cliente import Cliente
-from src.models.Venda import Venda
 from src.util.Auth import auth
+from src.service.VendaService import VendaService
 
 class VendaController(Resource):
     def __init__(self) -> None:
         super().__init__()
 
+
     def get(self):
-        return jsonify(Venda.query.all())
+        resposta, status = VendaService.listar_vendas(self)
+        return make_response(resposta, status)
+
 
     @auth.login_required
     def post(self):
-        dados = json.loads(request.data)
-        venda = Venda(
-            valor=dados['valor'],
-            metodoPagamento=dados['metodoPagamento'],
-            desconto=dados['desconto'],
-            cliente_id=dados['cliente_id'],
-            veiculo_id=dados['veiculo_id'],
-            vendedor_id=dados['vendedor_id']
-        )
-        venda.salvar()
-        return jsonify(venda)
+        resposta, status = VendaService.adicionar_venda(self, request.data)
+        return make_response(resposta, status)
+
 
     @auth.login_required
     def put(self):
-        dados = json.loads(request.data)
-        venda = Venda.query.filter_by(id=dados['id']).first()
-        venda.valor=dados['valor'],
-        venda.metodoPagamento=dados['metodoPagamento'],
-        venda.desconto=dados['desconto'],
-        venda.cliente_id=dados['cliente_id'],
-        venda.veiculo_id=dados['veiculo_id'],
-        venda.vendedor_id=dados['vendedor_id']
-        venda.salvar()
-        return jsonify(venda)
+        resposta, status = VendaService.modificar_venda(self, request.data)
+        return make_response(resposta, status)
 
     @auth.login_required
     def delete(self):
-        dados = json.loads(request.data)
-        venda = Venda.query.filter_by(id=dados['id']).first()
-        venda.apagar()
-        return {'success':'Registro apagado'}
+        resposta, status = VendaService.remover_venda(self, request.data)
+        return make_response(resposta, status)
