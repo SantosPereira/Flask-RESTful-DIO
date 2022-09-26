@@ -11,23 +11,19 @@ class ClienteController(Resource):
 
     @auth.login_required
     def get(self):
-        resposta, status = ClienteService.listar_clientes(self)
-        return make_response(resposta, status)
+        return make_response(ClienteService.listar_clientes(self))
 
 
     @auth.login_required
     def post(self):
-        resposta, status = ClienteService.adicionar_cliente(self, request.data)
-        return make_response(resposta, status)
+        return make_response(ClienteService.adicionar_cliente(self, request.data))
 
 
     @auth.login_required
     def put(self):
-        resposta, status = ClienteService.modificar_cliente(self, request.data)
-        return make_response(resposta, status)
+        return make_response(ClienteService.modificar_cliente(self, request.data))
 
 
     @auth.login_required
     def delete(self):
-        resposta, status = ClienteService.remover_cliente(self, request.data)
-        return make_response(resposta, status)
+        return make_response(ClienteService.remover_cliente(self, request.data))

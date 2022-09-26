@@ -9,22 +9,18 @@ class VeiculoController(Resource):
         super().__init__()
 
     def get(self):
-        resposta, status = VeiculoService.listar_veiculos(self)
-        return make_response(resposta, status)
+        return make_response(VeiculoService.listar_veiculos(self))
 
     @auth.login_required
     def post(self):
-        resposta, status = VeiculoService.adcionar_veiculo(self, request.data)
-        return make_response(resposta, status)
+        return make_response(VeiculoService.adcionar_veiculo(self, request.data))
 
 
     @auth.login_required
     def put(self):
-        resposta, status = VeiculoService.modificar_veiculo(self, request.data)
-        return make_response(resposta, status)
+        return make_response(VeiculoService.modificar_veiculo(self, request.data))
 
 
     @auth.login_required
     def delete(self):
-        resposta, status = VeiculoService.apagar_veiculo(self, request.data)
-        return make_response(resposta, status)
+        return make_response(VeiculoService.apagar_veiculo(self, request.data))
