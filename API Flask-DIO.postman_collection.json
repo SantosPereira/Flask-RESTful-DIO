@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "78b7b04f-8726-4e5a-bc81-43df0263f141",
+		"name": "API Flask:DIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15598386"
+	},
+	"item": [
+		{
+			"name": "Veículo",
+			"item": [
+				{
+					"name": "Veiculo:GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/veiculo",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"veiculo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Listar usuários",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/usuario/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar usuário",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro_1\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/usuario/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar usuário",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/usuario/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar usuário",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/usuario/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Listar cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar cliente",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Pedro Henrique Soares\",\r\n    \"cpf\":\"123456789\",\r\n    \"endereco\":\"Rua Governador Carlos Cavalcantti\",\r\n    \"clubeBeneficios\":true\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar cliente",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"pedro\",\r\n    \"senha\":\"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar cliente",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pedro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Pedro Henrique Soares\",\r\n    \"cpf\":\"123456789\",\r\n    \"endereco\":\"Rua Governador Carlos Cavalcantti\",\r\n    \"clubeBeneficios\":false\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venda",
+			"item": [
+				{
+					"name": "Listar vendas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flask-url-base}}/api/venda",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"venda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar venda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 35000,\r\n    \"metodoPagamento\": \"Financiamento\",\r\n    \"desconto\": 3200,\r\n    \"cliente_id\": 1,\r\n    \"veiculo_id\": 1,\r\n    \"vendedor_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/venda/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"venda",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar venda",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{flask-url-base}}/api/venda/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"venda",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar venda",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":14\r\n}"
+						},
+						"url": {
+							"raw": "{{flask-url-base}}/api/venda/",
+							"host": [
+								"{{flask-url-base}}"
+							],
+							"path": [
+								"api",
+								"venda",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "1234",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "pedro",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "flask-url-base",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
