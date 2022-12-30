@@ -15,11 +15,9 @@ class VeiculoController(Resource):
     def post(self):
         return make_response(VeiculoService.adcionar_veiculo(self, request.data))
 
-
     @auth.login_required
     def put(self):
         return make_response(VeiculoService.modificar_veiculo(self, request.data))
-
 
     @auth.login_required
     def delete(self):

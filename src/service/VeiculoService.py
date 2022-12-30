@@ -1,4 +1,4 @@
-import json
+from json import loads
 from typing import Tuple
 from flask import jsonify, Response
 from src.models.Veiculo import Veiculo
@@ -10,16 +10,15 @@ class VeiculoService:
 
     
     def adcionar_veiculo(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         veiculo = Veiculo(    
-            id=dados['id'],
             modelo=dados['modelo'],
             versao=dados['versao'],
             marca=dados['marca'],
             combustivel=dados['combustivel'],
             potencia=dados['potencia'],
             peso=dados['peso'],
-            computadorBordo=dados[' computadorBordo'],
+            computadorBordo=dados['computadorBordo'],
             arCondicionado=dados['arCondicionado'],
             preco=dados['preco'],
         )
@@ -28,7 +27,7 @@ class VeiculoService:
 
 
     def modificar_veiculo(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             veiculo = Veiculo.query.filter_by(id=dados['id']).first()
         except:
@@ -49,7 +48,7 @@ class VeiculoService:
         return jsonify(veiculo), 200
 
     def apagar_veiculo(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             veiculo = Veiculo.query.filter_by(id=dados['id']).first()
         except:

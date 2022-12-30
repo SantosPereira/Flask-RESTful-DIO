@@ -1,4 +1,4 @@
-import json
+from json import loads
 from typing import Tuple
 from flask import Response, jsonify
 from src.models.Venda import Venda
@@ -11,7 +11,7 @@ class VendaService:
 
 
     def adicionar_venda(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         venda = Venda(
             valor=dados['valor'],
             metodoPagamento=dados['metodoPagamento'],
@@ -25,7 +25,7 @@ class VendaService:
 
 
     def modificar_venda(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         venda = Venda.query.filter_by(id=dados['id']).first()
         venda.valor=dados['valor'],
         venda.metodoPagamento=dados['metodoPagamento'],
@@ -38,7 +38,7 @@ class VendaService:
 
 
     def remover_venda(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         venda = Venda.query.filter_by(id=dados['id']).first()
         venda.apagar()
         return jsonify({'success': 'Registro apagado'}), 200

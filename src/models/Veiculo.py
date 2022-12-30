@@ -12,10 +12,10 @@ class Veiculo(Base):
     marca: str = Column(String(25))
     combustivel: str = Column(String(25))
     potencia: str = Column(String(10))
-    pes: int = Column(Integer)
+    peso: int = Column(Integer)
     computadorBordo: bool = Column(Boolean)
     arCondicionado: bool = Column(Boolean)
-    prec: int = Column(Integer, nullable=False)
+    preco: int = Column(Integer, nullable=False)
 
 
     def salvar(self) -> None:

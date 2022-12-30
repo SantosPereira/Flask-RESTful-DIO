@@ -1,4 +1,4 @@
-import json
+from json import loads
 from typing import Tuple
 from flask import jsonify, Response
 from src.models.Usuario import Usuario
@@ -10,7 +10,7 @@ class UsuarioService:
 
 
     def salvar_usuario(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         if 'login' in dados and 'senha' in dados:
             if not Usuario.query.filter_by(login=dados['login']).first():
                 usuario = Usuario(login=dados['login'], senha=dados['senha'])
@@ -22,7 +22,7 @@ class UsuarioService:
 
 
     def modificar_usuario(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             usuario = Usuario.query.filter_by(login=dados['login']).first()
         except:
@@ -34,7 +34,7 @@ class UsuarioService:
 
 
     def apagar_usuario(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             usuario = Usuario.query.filter_by(login=dados['login']).first()
         except:

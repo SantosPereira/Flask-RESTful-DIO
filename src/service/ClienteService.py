@@ -1,7 +1,8 @@
-import json
+from json import loads
 from typing import Tuple
 from flask import Response, jsonify
 from src.models.Cliente import Cliente
+
 
 class ClienteService:
     def listar_clientes(self) -> Tuple[Response, int]:
@@ -10,7 +11,7 @@ class ClienteService:
 
 
     def adicionar_cliente(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         # TODO ~~> validar cpf
         if 'nome' in dados and 'cpf' in dados and 'endereco' in dados and 'clubeBeneficios' in dados:
             try:
@@ -28,7 +29,7 @@ class ClienteService:
 
 
     def modificar_cliente(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             cliente = Cliente.query.filter_by(cpf=dados['cpf']).first()
         except:
@@ -45,7 +46,7 @@ class ClienteService:
 
 
     def remover_cliente(self, dados) -> Tuple[Response, int]:
-        dados = json.loads(dados)
+        dados = loads(dados)
         try:
             cliente = Cliente.query.filter_by(cpf=dados['cpf']).first()
         except:
