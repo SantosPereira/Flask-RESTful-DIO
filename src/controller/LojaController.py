@@ -1,6 +1,6 @@
-import json
-from flask import request
+from flask import request, make_response
 from flask_restful import Resource
+from src.service.LojaService import LojaService
 
 
 class LojaController(Resource):
@@ -8,14 +8,13 @@ class LojaController(Resource):
         super().__init__()
 
     def get(self):
-        return ''
+        return make_response(LojaService.listar_lojas(self))
 
     def post(self):
-        dados = json.loads(request.data)
-        return ''
+        return make_response(LojaService.adicionar_loja(self, request.data))
 
     def put(self):
-        return ''
+        return make_response(LojaService.modificar_loja(self, request.data))
 
     def delete(self):
-        return ''
+        return make_response(LojaService.remover_loja(self, request.data))
