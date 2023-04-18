@@ -26,4 +26,4 @@ api.add_resource(ClienteController, '/api/cliente/')
 
 if __name__ == '__main__':
     Base.metadata.create_all(bind=engine)
-    app.run(debug=True)
+    app.run(debug=True, port=5000, host='0.0.0.0')
