@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/SantosPereira/Flask-RESTful-DIO'
-            }
-        }
+//         stage('Checkout') {
+//             steps {
+//                 git branch: 'main', url: 'https://github.com/SantosPereira/Flask-RESTful-DIO'
+//             }
+//         }
         stage('Build') {
             steps {
                 script {
